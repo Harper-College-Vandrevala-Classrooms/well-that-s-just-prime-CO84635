@@ -49,7 +49,7 @@ public class TestFactorizer {
 
   @Test
   public void testThreeHundredSixty() {
-    assertEquals("2 2 2 3 3 5", Factorizer.printPrimeFactors(100));
+    assertEquals("2 2 2 3 3 5", Factorizer.printPrimeFactors(360));
   }
 
   @Test
