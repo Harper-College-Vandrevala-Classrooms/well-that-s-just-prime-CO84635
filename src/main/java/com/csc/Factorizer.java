@@ -2,13 +2,27 @@ package com.csc;
 
 public class Factorizer {
 
-  // You should implement your solution here.
-  // Feel free to delete this example method when you implement your solution.
-  public int exampleMethod(int someArgument) {
-    if (someArgument > 5) {
-      return 1;
-    } else {
-      return 2;
+  public static String printPrimeFactors(int n) {
+    if (n <= 1) {
+      return null;
     }
+
+    String primeFactors = "";
+    int divisor = 2;
+
+    while (divisor * divisor <= n) {
+      if (n % divisor == 0) {
+        primeFactors += divisor + " ";
+        n = n / divisor;
+      } else {
+        divisor++;
+      }
+    }
+
+    if (n > 1) {
+      primeFactors += n;
+    }
+
+    return primeFactors;
   }
 }

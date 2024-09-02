@@ -12,22 +12,49 @@ public class TestFactorizer {
   @BeforeEach
   void setUp() {
     factorizer = new Factorizer();
+
   }
 
   // Replace the following example tests with your own tests
   // of the prime factorization function.
   @Test
-  public void testZero() {
-    assertEquals(2, factorizer.exampleMethod(0));
+  public void testNegativeOne() {
+    assertEquals(null, Factorizer.printPrimeFactors(-1));
   }
 
   @Test
   public void testOne() {
-    assertEquals(2, factorizer.exampleMethod(1));
+    assertEquals(null, Factorizer.printPrimeFactors(1));
   }
 
   @Test
-  public void testTen() {
-    assertEquals(1, factorizer.exampleMethod(10));
+  public void testThree() {
+    assertEquals("3", Factorizer.printPrimeFactors(3));
+  }
+
+  @Test
+  public void testThirtyFive() {
+    assertEquals("5 7", Factorizer.printPrimeFactors(35));
+  }
+
+  @Test
+  public void testTwentyFour() {
+    assertEquals("2 2 2 3", Factorizer.printPrimeFactors(24));
+  }
+
+  @Test
+  public void testSeventeen() {
+    assertEquals("17", Factorizer.printPrimeFactors(17));
+  }
+
+  @Test
+  public void testThreeHundredSixty() {
+    assertEquals("2 2 2 3 3 5", Factorizer.printPrimeFactors(100));
+  }
+
+  @Test
+  public void testOneHundred() {
+    assertEquals("2 2 5 5", Factorizer.printPrimeFactors(100));
   }
 }
+
