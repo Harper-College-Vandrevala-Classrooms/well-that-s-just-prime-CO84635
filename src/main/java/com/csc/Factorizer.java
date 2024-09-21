@@ -27,20 +27,15 @@ public class Factorizer {
   }
 
   public boolean isPrime(int n) {
-    if (n <= 1) {
+    String primeFactors = printPrimeFactors(n);
+
+    if (primeFactors == null ) {
       return false;
     }
-
-    int divisor = 2;
-    while (divisor * divisor <= n) {
-      if (n % divisor == 0) {
-        return false;
-      } else {
-        divisor++;
-      }
-    }
-    return true;
+    
+    return primeFactors.equals(String.valueOf(n));
   }
+
 
   public boolean isComposite(int n) {
     if (n <= 1) {
@@ -60,14 +55,19 @@ public class Factorizer {
     }
 
     int greatestCommonDivisor = 1;
-    for (int i = 1; i <= Math.min(numerator, denominator); i++){
-      if (numerator % i == 0 && denominator % i == 0) {
-        greatestCommonDivisor = i;
-      }
-    }
+    int divisor = 2;
 
-    numerator /= greatestCommonDivisor;
-    denominator /= greatestCommonDivisor;
+    while (divisor <= numerator && divisor <= denominator) {
+      String numeratorFactors = printPrimeFactors(numerator);
+      String denominatorFactors = printPrimeFactors(denominator);
+
+      while (numerator % divisor == 0 && denominator % divisor == 0) {
+        greatestCommonDivisor *= divisor;
+        numerator /= divisor;
+        denominator /= divisor;
+      }
+      divisor++;
+    }
 
     if (denominator == 1) {
       return String.valueOf(numerator);
