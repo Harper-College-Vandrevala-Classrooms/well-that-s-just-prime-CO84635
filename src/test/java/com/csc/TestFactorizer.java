@@ -76,25 +76,7 @@ public class TestFactorizer {
   public void testNotPrime2() {
     assertEquals(false, factorizer.isPrime(6));
   }
-
-  @Test
-  public void testReduceWholeNumber() {
-    assertEquals("3", factorizer.reduce(36,12));
-  }
-
-  @Test
-  public void testReduceWholeNumber2() {
-    assertEquals("1", factorizer.reduce(12,12));
-  }
-
-  @Test
-  public void testReduce() {assertEquals("6/7", factorizer.reduce(12,14));
-  }
-
-  @Test
-  public void testReduce2() {assertEquals("12/37", factorizer.reduce(12,37));
-  }
-
+  
   @Test
   public void testisComposite(){
       assertTrue(factorizer.isComposite(36));}

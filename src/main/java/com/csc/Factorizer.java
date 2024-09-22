@@ -36,7 +36,6 @@ public class Factorizer {
     return primeFactors.equals(String.valueOf(n));
   }
 
-
   public boolean isComposite(int n) {
     if (n <= 1) {
       return false;
@@ -44,36 +43,4 @@ public class Factorizer {
 
     return !isPrime(n);
   }
-
-  public String reduce(int numerator, int denominator) {
-    if (denominator == 0) {
-      return "Undefined";
-    }
-
-    if (numerator == 0) {
-      return "0";
-    }
-
-    int greatestCommonDivisor = 1;
-    int divisor = 2;
-
-    while (divisor <= numerator && divisor <= denominator) {
-      String numeratorFactors = printPrimeFactors(numerator);
-      String denominatorFactors = printPrimeFactors(denominator);
-
-      while (numerator % divisor == 0 && denominator % divisor == 0) {
-        greatestCommonDivisor *= divisor;
-        numerator /= divisor;
-        denominator /= divisor;
-      }
-      divisor++;
-    }
-
-    if (denominator == 1) {
-      return String.valueOf(numerator);
-    } else {
-      return numerator + "/" + denominator;
-    }
-  }
-
 }
