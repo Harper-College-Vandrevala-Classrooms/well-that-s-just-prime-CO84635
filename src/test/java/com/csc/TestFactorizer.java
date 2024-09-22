@@ -15,8 +15,6 @@ public class TestFactorizer {
 
   }
 
-  // Replace the following example tests with your own tests
-  // of the prime factorization function.
   @Test
   public void testNegativeOne() {
     assertEquals(null, Factorizer.printPrimeFactors(-1));
@@ -81,7 +79,6 @@ public class TestFactorizer {
   public void testNotPrime4() {
       assertFalse(factorizer.isPrime(0));
   }
-
 
   @Test
   public void testisComposite(){
