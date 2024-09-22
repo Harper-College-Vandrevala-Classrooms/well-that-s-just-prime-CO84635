@@ -58,25 +58,31 @@ public class TestFactorizer {
   }
 
   @Test
-  public void testIsPrime() {
-    assertEquals(true, factorizer.isPrime(3));
-  }
-
-  @Test
-  public void testIsPrime2() {
-    assertEquals(true, factorizer.isPrime(2));
-  }
-
-  @Test
-  public void testNotPrime() {
-    assertEquals(false, factorizer.isPrime(4));
+  public void testNotPrime1() {
+      assertFalse(factorizer.isPrime(36));
   }
 
   @Test
   public void testNotPrime2() {
-    assertEquals(false, factorizer.isPrime(6));
+      assertFalse(factorizer.isPrime(12));
   }
-  
+
+  @Test
+  public void testIsPrime() {
+      assertTrue(factorizer.isPrime(17));
+  }
+
+  @Test
+  public void testNotPrime3() {
+      assertFalse(factorizer.isPrime(1));
+  }
+
+  @Test
+  public void testNotPrime4() {
+      assertFalse(factorizer.isPrime(0));
+  }
+
+
   @Test
   public void testisComposite(){
       assertTrue(factorizer.isComposite(36));}
@@ -96,7 +102,6 @@ public class TestFactorizer {
   @Test
   public void testNotComposite3(){
     assertFalse(factorizer.isComposite(0));}
-
 }
 
 
